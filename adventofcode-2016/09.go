@@ -13,7 +13,6 @@ func main() {
 
     i := 0
     c := int64(0)
-    fmt.Println("length", len(line))
     for i < len(line) {
         if line[i] == '(' {
             x := i + 1
