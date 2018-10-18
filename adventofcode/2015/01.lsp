@@ -9,8 +9,7 @@
   (loop for c across s do
         (incf i)
         (setf n (+ n (cond ((equal c #\() 1) ((equal c #\)) -1) (t 0))))
-        (if (< n 0) (return)))
-  i)
+        (if (< n 0) (return i))))
 
 (setf s (read-line))
 (print (sol-1 s))
