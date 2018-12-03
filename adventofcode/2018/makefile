@@ -4,8 +4,14 @@
 02.out: 02.c
 	@cc -g 02.c -o 02.out
 
+03.out: 03.c
+	@cc -g 03.c -o 03.out
+
 sol01: 01.out
 	@./01.out < 01.txt
 
 sol02: 02.out
 	@./02.out < 02.txt
+
+sol03: 03.out
+	@./03.out < 03.txt
