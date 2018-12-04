@@ -21,3 +21,6 @@ sol03: 03.out
 
 sol04: 04.out
 	@./04.out < 04.txt
+
+clean:
+	@rm -r *.out *.dSYM/
