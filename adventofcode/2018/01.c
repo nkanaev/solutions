@@ -12,8 +12,8 @@ int sol1(int *nums, size_t len) {
 
 int sol2(int *nums, size_t len) {
     int result;
-    int seen_pos[100000], seen_neg[100000];
-    for (size_t i = 0; i < 5000; i++) {
+    int seen_pos[1000000], seen_neg[1000000];
+    for (size_t i = 0; i < 1000000; i++) {
         seen_pos[i] = 0;
         seen_neg[i] = 0;
     }
