@@ -7,6 +7,9 @@
 03.out: 03.c
 	@cc -g 03.c -o 03.out
 
+04.out: 04.c
+	@cc -g 04.c -o 04.out
+
 sol01: 01.out
 	@./01.out < 01.txt
 
@@ -15,3 +18,6 @@ sol02: 02.out
 
 sol03: 03.out
 	@./03.out < 03.txt
+
+sol04: 04.out
+	@./04.out < 04.txt
