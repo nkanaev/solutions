@@ -10,6 +10,9 @@
 04.out: 04.c
 	@cc -g 04.c -o 04.out
 
+05.out: 05.c
+	@cc -g 05.c -o 05.out
+
 sol01: 01.out
 	@./01.out < 01.txt
 
@@ -21,6 +24,9 @@ sol03: 03.out
 
 sol04: 04.out
 	@./04.out < 04.txt
+
+sol05: 05.out
+	@./05.out < 05.txt
 
 clean:
 	@rm -r *.out *.dSYM/
