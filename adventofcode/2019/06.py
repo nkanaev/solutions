@@ -32,7 +32,8 @@ def main():
         orbit, object = line.strip().split(')')
         orbits[object] = orbit
 
-    sol1 = sum(orbitcount(orbit, orbits, {}) for orbit in orbits)
+    cache = {}
+    sol1 = sum(orbitcount(orbit, orbits, cache) for orbit in orbits)
     print(sol1)
 
     sol2 = shortestdistance('YOU', 'SAN', orbits)
