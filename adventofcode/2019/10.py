@@ -52,38 +52,25 @@ def sol1(coords, w, h):
 
 
 def sol2(coords, w, h, cannon):
-    #from pprint import pprint
     configs = [cannon_config(cannon, coord) for coord in coords]
     configs = sorted(configs, key=lambda c: (c.angle, c.dist))
     ordered = []
     i = 0
-    #pprint(configs)
     while configs:
         ordered.append(configs.pop(i))
         i = i % len(configs)
+        # reached the result
         if len(ordered) == 200:
-            break
-        if len(configs) == 1:
-            ordered.append(configs.pop())
             break
         si = i
         while ordered[-1].angle == configs[i].angle:
             i = (i + 1) % len(configs)
+            # security measure
             if i == si:
                 ordered.extend(configs)
                 break
-
     coord = ordered[200-1]
     return int(coord.star.x * 100 + coord.star.y)
-
-    map = {}
-    for i, config in enumerate(ordered):
-        map[(config.star.x, config.star.y)] = i + 1
-    for iy in range(h):
-        for ix in range(w):
-            print(str(map.get((ix, iy), '.')).rjust(3), end='')
-        print('')
-    #pprint(ordered)
 
 
 def main():
