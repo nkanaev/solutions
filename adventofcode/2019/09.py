@@ -31,7 +31,6 @@ def process(data, inputval):
         mode, op = divmod(arr[pc], 100)
         m2, m1 = divmod(mode, 10)
         m3, m2 = divmod(m2, 10)
-        print(f':: pc={pc:03} op={op} rb={rb} |', [arr[idx] for idx in range(pc, pc+length[op])], file=sys.stderr)
         if op == 1:
             setval(pc+3, m3, val(pc+1, m1) + val(pc+2, m2))
         elif op == 2:
@@ -44,7 +43,6 @@ def process(data, inputval):
             elif m1 == 2:
                 arr[arr[pc+1]+rb] = inputval
         elif op == 4:
-            print('>>', val(pc+1, m1), m1, pc, file=sys.stderr)
             print(val(pc+1, m1))
         elif op == 5:
             if val(pc+1, m1) != 0:
